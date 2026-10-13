@@ -698,6 +698,17 @@ h2 {
   object-fit: contain;
 }
 
+.race-index-image {
+  width: 46px;
+  height: 46px;
+  border: 1px solid #e7e2d8;
+  object-fit: cover;
+}
+
+.race-index-image-hume {
+  object-position: center top;
+}
+
 .class-index-arrow {
   color: var(--accent);
   font-size: 22px;
@@ -754,6 +765,38 @@ h2 {
 
 .class-detail-heading .section-eyebrow {
   margin-bottom: 6px;
+}
+
+.race-detail-heading {
+  padding-bottom: 25px;
+}
+
+.race-detail-heading .class-detail-title {
+  font-size: clamp(28px, 4vw, 40px);
+}
+
+.race-hero-layout {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+}
+
+.race-portrait {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #e4dfd4;
+  background: #f8f6f1;
+  object-fit: contain;
+  object-position: center;
+}
+
+.race-detail-intro {
+  max-width: 480px;
+  margin: 11px 0 0;
+  color: var(--body);
+  font-size: 14px;
+  line-height: 1.7;
 }
 
 .class-detail-title {
@@ -874,6 +917,22 @@ h2 {
   font-weight: 600;
   letter-spacing: 0.04em;
   scroll-margin-top: 115px;
+}
+
+.race-trait-heading {
+  margin: 20px 0 9px;
+  color: #62502e;
+  font-family: var(--fantasy);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  scroll-margin-top: 115px;
+  text-transform: uppercase;
+}
+
+.race-content > .ability-paragraph:first-child {
+  margin-top: 23px;
+  font-size: 15px;
 }
 
 .ability-paragraph {
@@ -1113,6 +1172,29 @@ h2 {
 
   .class-detail-heading {
     padding: 20px 0 17px;
+  }
+
+  .race-detail-heading {
+    padding-bottom: 20px;
+  }
+
+  .race-detail-heading .class-detail-title {
+    font-size: clamp(22px, 7vw, 30px);
+  }
+
+  .race-hero-layout {
+    grid-template-columns: 104px minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .race-portrait {
+    width: 104px;
+    height: 132px;
+  }
+
+  .race-detail-intro {
+    font-size: 12px;
+    line-height: 1.6;
   }
 
   .class-back-link {

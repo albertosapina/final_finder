@@ -1,6 +1,7 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
 import ClassSection from './components/ClassSection.vue'
+import RaceSection from './components/RaceSection.vue'
 
 const sections = [
   {
@@ -48,6 +49,7 @@ const filteredSections = computed(() => {
 })
 
 const isClassPage = computed(() => routeHash.value.startsWith('#clases'))
+const isRacePage = computed(() => routeHash.value.startsWith('#razas'))
 
 function updateRoute() {
   routeHash.value = window.location.hash
@@ -81,6 +83,10 @@ onBeforeUnmount(() => window.removeEventListener('hashchange', updateRoute))
 
     <main v-if="isClassPage">
       <ClassSection />
+    </main>
+
+    <main v-else-if="isRacePage">
+      <RaceSection />
     </main>
 
     <main v-else>
@@ -132,11 +138,15 @@ onBeforeUnmount(() => window.removeEventListener('hashchange', updateRoute))
 
         <div class="section-grid">
           <component
-            :is="section.id === 'clases' ? 'a' : 'article'"
+            :is="section.id === 'clases' || section.id === 'razas' ? 'a' : 'article'"
             v-for="(section, index) in filteredSections"
             :id="section.id"
             :key="section.id"
-            :href="section.id === 'clases' ? '#clases' : undefined"
+            :href="
+              section.id === 'clases' || section.id === 'razas'
+                ? `#${section.id}`
+                : undefined
+            "
             class="section-card"
             :class="`section-card-${index + 1}`"
           >
